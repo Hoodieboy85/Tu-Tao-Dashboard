@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap" rel="stylesheet">
+	 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+	<style>
+		body{
+		  background-image: url('lunar.avif');
+		  background-repeat: no-repeat;
+		  background-size: 100% 100%;
+		  background-attachment:fixed;
+		 
+		  height:162vh;
+		 
+		  
+		}
+		
+		#head{
+		   color:white;
+		   font-family:Rubik Distressed;
+		   font-size:44px;	
+		}
+		
+		#Dashboard-grid{
+		  display:grid;
+		  display:flex;
+		  gap:40px;
+		}
+		
+		
+		.Box{
+		   
+		   display:flex;
+		   flex-direction:column;
+		   justify-content: flex-start;
+		   margin-top:100px;
+		   align-items:center;
+		   text-align:center;
+		   height:150px;
+		   width:300px;
+		   border-radius:10px;
+		   background:red;
+		   border: solid #ffde00 3px;
+		   margin-left:20px;
+		   box-shadow: 8px 10px 25px rgba(255, 255, 0, 1.0);
+		   
+		   
+		}
+	     
+	     
+	       .Box h1{
+			    margin:0;
+			    padding:0;   
+			} 
+			
+			
+	        
+	        .primo{
+			     font-family:carter one; 
+			     font-weight: bold;
+			     font-size:44px;
+			     color:white;
+			     webkit-stroke: 7px yellow;
+			      	
+			}
+			
+			#primogems{
+				 font-family:carter one; 
+			     font-weight: bold;
+			     font-size:44px;
+			     color:white;
+			     webkit-stroke: 7px yellow;
+			}
+			
+			
+			#fates{
+			     font-family:carter one; 
+			     font-weight: bold;
+			     font-size:44px;
+			     color:white;
+			     webkit-stroke: 7px yellow;
+		    }	
+			
+			#wishes-total{
+				 font-family:carter one; 
+			     font-weight: bold;
+			     font-size:44px;
+			     color:white;
+			     webkit-stroke: 7px yellow;
+			}
+			
+			#add-gems{
+			      background:red;
+			      border:solid #ffde00 3px;
+			      font-family:carter one; 
+			      color:white;
+			      border-radius:8px;
+			      padding-left:20px;
+			      padding-right:20px;
+			      margin-left:20px;
+			      
+				
+			}
+			
+			
+	      input::placeholder{
+			  color:white;
+			 
+			 }
+	     
+	     
+	     
+	     
+	     
+	     
+	   
+
+	     
+	     
+	     
+	     
+	     
+	</style>
+</head>
+<body>
+	<h1 id="head">HU TAO DASHBOARD</h1>
+	
+	
+	    
+	    <div style="   position:absolute;  padding-left:10px; display:flex; top:145px;">
+			
+		<input id="gems-input" style=" border-radius: 25px; background:red; border: solid #ffde00 3px; padding-top:10px; padding-bottom:10px; padding-left:20px; padding-right: 25px;    font-family:carter one; font-size:14px;  color:white;  " type="number" placeholder="Enter Primos">
+		
+		
+		
+		  
+		 
+		 
+		 
+		
+		<input id="fates-input" style="margin-left:160px; border-radius: 25px; background:red; border: solid #ffde00 3px; padding-top:10px; padding-bottom:10px; padding-left:20px;  padding-right: 25px; font-family:carter one; font-size:14px;  color:white; " type="number" placeholder="Enter Fates">
+		
+		
+		 <button id="add-gems" type="button">
+		 <img src="primo.png"
+		 alt="icon" style="width:35px; vertical-align:middle; margin-right:5px;"</button>
+		</div>
+	</div>
+	
+	<div id=Dashboard-grid>
+		
+	   <div class="Box">
+		   <h1 class="primo">Primogems</h1>
+		   <h1 id="primogems">0</h1>
+		   
+	   </div>
+	   
+	   <div class="Box">
+	       <h1 class="primo">Fates</h1>
+	       <h1 id="fates">0</h1>
+	   </div>
+	   
+	    <div class="Box">
+	       <h1 class="primo">Total Wishes</h1>
+	       <h1 id="wishes-total">0</h1>
+	   </div>
+	   
+    </div>
+    
+    <div style="display:flex;
+       justify-content:center; gap:20px;
+       margin-top:130px; padding-bottom:50px;">
+   <img src="hu-tao-banner.webp" 
+   style="width:45%; border: 3px solid #ff4e00;
+   border-radius: 15px; box-shadow: 0 0 15px #ff4e00; ">
+   
+    <img src="homa-banner.png" 
+   style="width:45%; border: 3px solid #ffde00;
+   border-radius: 15px; box-shadow: 0 0 15px #ffde00; ">
+   
+   
+  </div>
+   
+   
+   
+   
+   
+   
+   
+  
+
+   
+  
+
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    
+<script>  
+	  
+  // Function to update, calculate, and save everything
+function processUpdate() {
+    // 1. Get the new values from inputs (overwrite old ones)
+    const newPrimos = parseInt(document.getElementById('gems-input').value) || 0;
+    const newFates = parseInt(document.getElementById('fates-input').value) || 0;
+
+    // 2. Perform the math: 160 primos = 1 wish, 1 fate = 1 wish
+    const wishFromPrimos = Math.floor(newPrimos / 160);
+    const totalWishes = wishFromPrimos + newFates;
+
+    // 3. Update the webpage display
+    document.getElementById('primogems').innerText = newPrimos;
+    document.getElementById('fates').innerText = newFates;
+    document.getElementById('wishes-total').innerText = totalWishes;
+
+    // 4. Save to localStorage so it stays after refresh
+    localStorage.setItem('savedPrimos', newPrimos);
+    localStorage.setItem('savedFates', newFates);
+
+    // 5. Clear inputs for next time
+    document.getElementById('gems-input').value = '';
+    document.getElementById('fates-input').value = '';
+}
+
+// Function to load saved data when the page first opens
+function loadData() {
+    const savedPrimos = localStorage.getItem('savedPrimos') || 0;
+    const savedFates = localStorage.getItem('savedFates') || 0;
+
+    document.getElementById('primogems').innerText = savedPrimos;
+    document.getElementById('fates').innerText = savedFates;
+    document.getElementById('wishes-total').innerText = Math.floor(savedPrimos / 160) + parseInt(savedFates);
+}
+
+// EVENT LISTENERS
+
+// Run loadData when the page starts
+window.onload = loadData;
+
+// Handle "Enter" key on both inputs
+document.getElementById('gems-input').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') processUpdate();
+});
+document.getElementById('fates-input').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') processUpdate();
+});
+
+// Handle Button Clicks
+document.getElementById('add-gems').addEventListener('click', processUpdate);
+document.getElementById('add-fates').addEventListener('click', processUpdate);
+
+
+</script>
+  
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</body>
+</html>
